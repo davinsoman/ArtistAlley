@@ -16,7 +16,7 @@
     {% endfor %}
 </ul>
 
-<form method="POST" action="{{ url_for('views.new_post') }}" enctype="multipart/form-data">
+<form id="uploadForm" method="POST" action="{{ url_for('views.new_post') }}" enctype="multipart/form-data">
     <h2 align="center">New Post</h2>
     <div class="form-group">
         <label for="title">Title</label>
@@ -46,4 +46,21 @@
         <button type="submit" class="btn btn-primary">Post</button>
     </div>
 </form>
+<div id="result"></div>
+
+<script>
+    document.getElementById('uploadForm').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        const result = await response.json();
+        document.getElementById('result').innerText = `Prediction: ${result.prediction}`;
+    });
+</script>
 {% endblock %}

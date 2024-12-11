@@ -1,10 +1,13 @@
 """Stores the URL endpoints for website API
 examples are the notes, content pages"""
-from flask import Blueprint, render_template, request, flash, url_for, redirect, current_app
+from flask import Blueprint, render_template, request, flash, url_for, redirect, current_app, jsonify
 from flask_login import login_required, current_user
 from .. import db, photos
 from .models import Note, Post
 from datetime import datetime
+from ai.model_access import predict_image
+import os
+
 """This is the blueprint for the website it is a way to organize the website into smaller components
 and it lets the file know that routes are going to be defined in this file"""
 
@@ -48,12 +51,21 @@ def new_post():
     title = request.form.get('title')
     descrip = request.form.get('description')
     if 'image' not in request.files:
-        return 'No file part'
+        return jsonify({'error': 'No file provided'}), 400
     file = request.files['image']
     if file.filename == '':
-        return 'No selected file'
+        return jsonify({'error': 'No file provided'}), 400
     if file and file.filename.lower().endswith(('png', 'jpg', 'jpeg', 'gif')):
         with current_app.app_context():
+            # Save the file temporarily
+            temp_path = os.path.join('/tmp', file.filename)
+            file.save(temp_path)
+
+            # Predict the image
+            prediction = predict_image(temp_path)
+            print(f"Class prediction: {prediction}")
+
+            # Save the file to the photos folder
             filename = photos.save(file)
             new_post = Post(title=title, 
                             image=filename, 
