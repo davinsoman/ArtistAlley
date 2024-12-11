@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ArtistAlley - Dashboard</title>
+        <meta charset="utf-8">
+        <meta name = "description" content = "ArtAlley-CTP-project">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name = "keywords" content = "html, css, bootstrap, javascript">
+        <meta name = "author" content = "Mujie Shen">
+        <meta http-equiv = "refresh" content = "60"> 
+        <link rel="stylesheet" href="../assets/css/dashboard_stylesheet.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+      <!-- Header -->
+      <header class="p-3 mb-0 border-bottom">
+        <div class="container">
+          <div class="d-flex flex-wrap justify-content-between justify-content-lg-start">
+            <a href="#" class="d-flex align-items-center mb-5 mb-lg-0 link-body-emphasis text-decoration-none">
+              <img src="../assets/img/logo.png" width="30" height="30" class="mx-2"><span class="fs-5 fw-bold me-2">ArtAlley</span>
+            </a>
+    
+            <form class="w-50 me-3" role="search">
+              <div class="input-group">
+                <input type="search" class="form-control" placeholder="Search for artwork or user" aria-label="Search" aria-describedby="button-mainview-search">
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-default btn-outline-secondary my-0" id="button-mainview-search">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search mb-1" viewBox="0 0 16 16">
+                      <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+              <li><a href="#" class="nav-link px-2 link-body-emphasis">Create a new post</a></li>
+              <li><a href="#" class="nav-link px-2 link-body-emphasis">Messages</a></li>
+              <li><a href="#" class="nav-link px-2 link-body-emphasis">About us</a></li>
+            </ul>
+    
+            <div class="dropdown text-end">
+              <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+              </a>
+              <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <!-- profile -->
+        <div class="card bg-white text-white">
+          <img src="../assets/img/galaxy.jpeg" class="card-img" alt="profile-image">
+          <div class="card-img-overlay d-flex end-0">
+            <div class="container">
+              <div class="row mx-4 justify-content-between align-items-end">
+                <div class="col-auto mx-2 mb-0">
+                  <img src="https://github.com/mdo.png" alt="mdo" width="200" height="200" class="rounded-circle">
+                </div>
+                <div class="col mb-5">
+                  <h5 class="card-title fs-2">Artist Profile</h5>
+                  <p class="card-text fs-4 fst-italic">About the artist</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+            <!-- Album -->
+            <div class="row row-cols-1 row-cols-md-2 g-4 mb-5">
+              <div class="col">
+                <div class="card">
+                  <img src="../assets/img/ai_example1.jpg" width="100%" class="card-img-top" alt="ai-example-image1" style="display: block; margin: auto;">
+                  <div class="card-body">
+                    <h5 class="card-title">AI-Generated Image</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="../assets/img/ai_example2.jpg" width="100%" class="card-img-top" alt="ai-example-image1" style="display: block; margin: auto;">
+                  <div class="card-body">
+                    <h5 class="card-title">AI-Generated Image 2</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="../assets/img/human_example1_cubism.jpg" width="100%" class="card-img-top" alt="ai-example-image1" style="display: block; margin: auto;">
+                  <div class="card-body">
+                    <h5 class="card-title">Huamn Image</h5>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card">
+                  <img src="../assets/img/human_example2_nouveau_modern.jpg" width="100%" class="card-img-top" alt="ai-example-image1" style="display: block; margin: auto;">
+                  <div class="card-body">
+                    <h5 class="card-title">Human Image 2</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        
+      </main>
+      <script src="../bootstrap-5.3.3-examples/assets/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
+</html>
