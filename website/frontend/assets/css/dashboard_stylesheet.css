@@ -52,40 +52,23 @@ main {
     margin: 0;
 }
 
-.sidebar {
-    height: 100vh;
-    padding-top: 70px;
-    background-color: rgba(0, 0, 0, .25);
+.card {
+    margin-bottom: 20px;
+    border: 0px !important;
+    width: 100%;
+    height: auto;
 }
 
-.sidebar a {
+.card-img {
     display: block;
-    padding: 6px 20px 6px 16px;
-    text-decoration: none;
-    font-size: 20px;
-    margin-left: 40px;
-    color: #555;
+    border-radius: 0% !important;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
 }
 
-.sidebar a:hover {
-    color: #333;
-}
-
-#id_work_days input[type="checkbox"] {
-    display: none;
-  }
-  
-  #id_work_days span {
-    display: inline-block;
+.card-img-overlay {
     padding: 10px;
-    text-transform: uppercase;
-    border: 2px solid gold;
-    border-radius: 3px;
-    color: gold;
-  }
-  
-  #id_work_days input[type="checkbox"]:checked + span {
-    background-color: gold;
-    color: black;
-  }
-  
+    align-items: flex-end;
+}
