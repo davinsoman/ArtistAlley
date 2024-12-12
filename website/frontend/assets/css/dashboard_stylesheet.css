@@ -54,7 +54,7 @@ main {
 
 .card {
     margin-bottom: 20px;
-    border: 0px !important;
+    border: 0 0 0 1px solid !important;
     width: 100%;
     height: auto;
 }
@@ -71,4 +71,11 @@ main {
 .card-img-overlay {
     padding: 10px;
     align-items: flex-end;
+}
+
+.album img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    object-position: center top;
 }

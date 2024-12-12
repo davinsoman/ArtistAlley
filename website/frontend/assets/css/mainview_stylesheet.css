@@ -53,9 +53,9 @@ main {
 }
 
 .sidebar {
-    height: 100vh;
+    height: auto;
     padding-top: 70px;
-    background-color: rgba(0, 0, 0, .25);
+    background-color: white;
 }
 
 .sidebar a {
@@ -75,17 +75,39 @@ main {
     display: none;
   }
   
-  #id_work_days span {
+#id_work_days span {
     display: inline-block;
     padding: 10px;
     text-transform: uppercase;
     border: 2px solid gold;
     border-radius: 3px;
     color: gold;
-  }
-  
-  #id_work_days input[type="checkbox"]:checked + span {
+}
+
+#id_work_days input[type="checkbox"]:checked + span {
     background-color: gold;
     color: black;
-  }
-  
+}
+
+.album img {
+    object-fit: cover;
+    width: 100%;
+    height: 300px;
+    object-position: center top;
+}
+
+.album .btn-sm {
+    background-color: white;
+    border: 0;
+    color: black;
+}
+
+.album .like:hover {
+    background-color: white;
+    color: red;
+}
+
+.album .share:hover {
+    background-color: white;
+    color: blue;
+}
